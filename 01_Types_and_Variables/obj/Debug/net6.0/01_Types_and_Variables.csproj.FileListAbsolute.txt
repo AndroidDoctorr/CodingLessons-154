@@ -1,0 +1,15 @@
+C:\Users\andre\source\repos\CodingLessons-154\01_Types_and_Variables\bin\Debug\net6.0\01_Types_and_Variables.exe
+C:\Users\andre\source\repos\CodingLessons-154\01_Types_and_Variables\bin\Debug\net6.0\01_Types_and_Variables.deps.json
+C:\Users\andre\source\repos\CodingLessons-154\01_Types_and_Variables\bin\Debug\net6.0\01_Types_and_Variables.runtimeconfig.json
+C:\Users\andre\source\repos\CodingLessons-154\01_Types_and_Variables\bin\Debug\net6.0\01_Types_and_Variables.dll
+C:\Users\andre\source\repos\CodingLessons-154\01_Types_and_Variables\bin\Debug\net6.0\01_Types_and_Variables.pdb
+C:\Users\andre\source\repos\CodingLessons-154\01_Types_and_Variables\obj\Debug\net6.0\01_Types_and_Variables.csproj.AssemblyReference.cache
+C:\Users\andre\source\repos\CodingLessons-154\01_Types_and_Variables\obj\Debug\net6.0\01_Types_and_Variables.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\andre\source\repos\CodingLessons-154\01_Types_and_Variables\obj\Debug\net6.0\01_Types_and_Variables.AssemblyInfoInputs.cache
+C:\Users\andre\source\repos\CodingLessons-154\01_Types_and_Variables\obj\Debug\net6.0\01_Types_and_Variables.AssemblyInfo.cs
+C:\Users\andre\source\repos\CodingLessons-154\01_Types_and_Variables\obj\Debug\net6.0\01_Types_and_Variables.csproj.CoreCompileInputs.cache
+C:\Users\andre\source\repos\CodingLessons-154\01_Types_and_Variables\obj\Debug\net6.0\01_Types_and_Variables.dll
+C:\Users\andre\source\repos\CodingLessons-154\01_Types_and_Variables\obj\Debug\net6.0\refint\01_Types_and_Variables.dll
+C:\Users\andre\source\repos\CodingLessons-154\01_Types_and_Variables\obj\Debug\net6.0\01_Types_and_Variables.pdb
+C:\Users\andre\source\repos\CodingLessons-154\01_Types_and_Variables\obj\Debug\net6.0\01_Types_and_Variables.genruntimeconfig.cache
+C:\Users\andre\source\repos\CodingLessons-154\01_Types_and_Variables\obj\Debug\net6.0\ref\01_Types_and_Variables.dll
