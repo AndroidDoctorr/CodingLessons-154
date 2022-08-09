@@ -1,9 +1,9 @@
 public enum Genre
 {
-    Action = 1, Horror, Comedy, RomCom, Drama, Bromance, Fantasy, Documentary
+    Uncategorized, Action = 1, Horror, Comedy, RomCom, Drama, Bromance, Fantasy, Documentary
 }
 
-public enum Maturity { PG = 1, TV_G, G, TV_PG, TV_Y, TV_MA = 100, PG_13, R, NC_17 }
+public enum Maturity { U, G, PG, PG_13, R, NC_17, TV_G, TV_PG, TV_Y, TV_MA }
 
 public class StreamingContent
 {
@@ -68,10 +68,12 @@ public class StreamingContent
             }
 
             // 3. use enum values...
+            /*
             if ((int)MaturityRating >= 100)
                 return false;
             else
                 return true;
+            */
         }
     }
     public Genre Genre { get; set; }

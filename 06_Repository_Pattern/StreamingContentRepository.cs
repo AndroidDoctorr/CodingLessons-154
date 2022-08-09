@@ -1,3 +1,5 @@
+
+
 public class StreamingContentRepository
 {
     // The Repository Pattern
@@ -28,8 +30,37 @@ public class StreamingContentRepository
         return _contentDirectory;
     }
 
-    public StreamingContent GetContentByTitle(string title)
+    // Get a List of Family friendly contents
+    public List<StreamingContent> GetFamilyFriendlyContent()
     {
+        List<StreamingContent> familyFriendlyContents = new List<StreamingContent>();
+        // look at EACH content, ADD IF it's family friendly
+
+        foreach (StreamingContent item in _contentDirectory)
+        {
+            if (item.IsFamilyFriendly)
+            {
+                familyFriendlyContents.Add(item);
+            }
+        }
+
+        return familyFriendlyContents;
+
+        // This is LINQ, a fancier way of doing this
+        return _contentDirectory.Where(sc => sc.IsFamilyFriendly).ToList();
+    }
+
+    public List<StreamingContent> GetContentsByGenre(Genre genre)
+    {
+        return _contentDirectory.Where(sc => sc.Genre == genre).ToList();
+    }
+
+    // Be careful making things nullable!!!
+    public StreamingContent? GetContentByTitle(string title)
+    {
+        // LINQ version
+        return _contentDirectory.FirstOrDefault(sc => sc.Title == title);
+
         foreach (StreamingContent content in _contentDirectory)
         {
             if (content.Title.ToLower() == title.ToLower())
