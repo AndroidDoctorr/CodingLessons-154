@@ -112,8 +112,7 @@ public class ProgramUI
         // Console.Write("Please enter a description: ");
         // string description = Console.ReadLine() ?? "";
 
-        /*
-        Normal way (uncomment this if you don't have the helper method)
+        // Normal way
         Console.WriteLine(
             "Please select a Maturity Rating:\n" +
             "1. G\n" +
@@ -133,40 +132,38 @@ public class ProgramUI
             "5" => Maturity.NC_17,
             _ => Maturity.U,
         };
-        */
 
-        /*
-                Console.WriteLine(
-                    "Please select a Genre:\n" +
-                    "1. Action\n" +
-                    "2. Horror\n" +
-                    "3. Comedy\n" +
-                    "4. Drama\n" +
-                    "5. Rom-Com\n" +
-                    "6. Bromance\n" +
-                    "7. Fantasy\n" +
-                    "8. Documentary\n" +
-                    "0. Uncategorized\n"
-                );
-                string genreSelection = Console.ReadLine() ?? "0";
-                Genre genre = genreSelection switch
-                {
-                    "1" => Genre.Action,
-                    "2" => Genre.Horror,
-                    "3" => Genre.Comedy,
-                    "4" => Genre.Drama,
-                    "5" => Genre.RomCom,
-                    "6" => Genre.Bromance,
-                    "7" => Genre.Fantasy,
-                    "8" => Genre.Documentary,
-                    _ => Genre.Uncategorized,
-                };
-                */
+        Console.WriteLine(
+            "Please select a Genre:\n" +
+            "1. Action\n" +
+            "2. Horror\n" +
+            "3. Comedy\n" +
+            "4. Drama\n" +
+            "5. Rom-Com\n" +
+            "6. Bromance\n" +
+            "7. Fantasy\n" +
+            "8. Documentary\n" +
+            "0. Uncategorized\n"
+        );
+        string genreSelection = Console.ReadLine() ?? "0";
+        Genre genre = genreSelection switch
+        {
+            "1" => Genre.Action,
+            "2" => Genre.Horror,
+            "3" => Genre.Comedy,
+            "4" => Genre.Drama,
+            "5" => Genre.RomCom,
+            "6" => Genre.Bromance,
+            "7" => Genre.Fantasy,
+            "8" => Genre.Documentary,
+            _ => Genre.Uncategorized,
+        };
 
         string title = GetValidStringInput("Title");
         string description = GetValidStringInput("Description");
-        Maturity maturity = GetValidEnumInput<Maturity>("Maturity Rating");
-        Genre genre = GetValidEnumInput<Genre>("Genre");
+        // These use the optional helper method that ended up being too complicated for class...
+        // Maturity maturity = GetValidEnumInput<Maturity>("Maturity Rating");
+        // Genre genre = GetValidEnumInput<Genre>("Genre");
         double starRating = GetValidDoubleInput("Rating", 0, 5);
 
         StreamingContent newContent = new StreamingContent(
