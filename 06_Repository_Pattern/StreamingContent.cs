@@ -81,6 +81,8 @@ public class StreamingContent
 
     public override string ToString()
     {
-        return $"{Title}:\n{Description.Substring(0, 25) + "..."}\n{Genre}, Rated {MaturityRating}";
+        return $"{Title}:\n" +
+               $"{(Description.Length >= 25 ? Description.Substring(0, 25) + "..." : Description)}\n" +
+               $"{Genre}, Rated {MaturityRating}";
     }
 }

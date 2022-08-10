@@ -55,11 +55,48 @@ public class StreamingContentRepository
         return _contentDirectory.Where(sc => sc.Genre == genre).ToList();
     }
 
+
+
+
+    // CHALLENGE: 
+    // Write a method that gets all Contents with a star rating of at least X stars
+    public List<StreamingContent> GetContentsByRating(double stars)
+    {
+        // The LINQ way
+        return _contentDirectory.Where(c => c.StarRating >= stars).ToList();
+
+        // The long (more readale) way
+        List<StreamingContent> matchingContent = new List<StreamingContent>();
+        foreach (StreamingContent item in _contentDirectory)
+        {
+            if (item.StarRating >= stars)
+            {
+                matchingContent.Add(item);
+            }
+        }
+
+        return matchingContent;
+    }
+
+    public List<StreamingContent> SearchForContents(string? query)
+    {
+        if (query == null) return new List<StreamingContent>();
+
+        return _contentDirectory.Where(
+            sc => sc.Title.ToLower().Contains(query.ToLower())
+        ).ToList();
+    }
+
+
+
+
     // Be careful making things nullable!!!
     public StreamingContent? GetContentByTitle(string title)
     {
         // LINQ version
-        return _contentDirectory.FirstOrDefault(sc => sc.Title == title);
+        return _contentDirectory.FirstOrDefault(
+            sc => sc.Title.ToLower() == title.ToLower()
+        );
 
         foreach (StreamingContent content in _contentDirectory)
         {
