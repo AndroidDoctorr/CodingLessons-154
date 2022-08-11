@@ -8,7 +8,7 @@ public class StreamingContentRepository
     // 2. A set of methods that control how it is accessed
 
     // Our collection will be a List, but we will pretend it's a database
-    private readonly List<StreamingContent> _contentDirectory = new List<StreamingContent>();
+    protected readonly List<StreamingContent> _contentDirectory = new List<StreamingContent>();
 
     // Methods to control access (CRUD)
     // Create
@@ -27,7 +27,12 @@ public class StreamingContentRepository
     // Read
     public List<StreamingContent> GetAllContent()
     {
-        return _contentDirectory;
+        return _contentDirectory.Where(sc => sc.IsActive).ToList();
+    }
+
+    public List<StreamingContent> GetAllDeletedContent()
+    {
+        return _contentDirectory.Where(sc => !sc.IsActive).ToList();
     }
 
     // Get a List of Family friendly contents
@@ -36,7 +41,7 @@ public class StreamingContentRepository
         List<StreamingContent> familyFriendlyContents = new List<StreamingContent>();
         // look at EACH content, ADD IF it's family friendly
 
-        foreach (StreamingContent item in _contentDirectory)
+        foreach (StreamingContent item in GetAllContent())
         {
             if (item.IsFamilyFriendly)
             {
@@ -47,7 +52,7 @@ public class StreamingContentRepository
         return familyFriendlyContents;
 
         // This is LINQ, a fancier way of doing this
-        return _contentDirectory.Where(sc => sc.IsFamilyFriendly).ToList();
+        return GetAllContent().Where(sc => sc.IsFamilyFriendly).ToList();
     }
 
     public List<StreamingContent> GetContentsByGenre(Genre genre)
@@ -136,6 +141,8 @@ public class StreamingContentRepository
             return false;
         }
 
-        return _contentDirectory.Remove(content);
+        // return _contentDirectory.Remove(content);
+        content.IsActive = false;
+        return true;
     }
 }

@@ -78,6 +78,8 @@ public class StreamingContent
     }
     public Genre Genre { get; set; }
 
+    public bool IsActive { get; set; } = true;
+
 
     public override string ToString()
     {
