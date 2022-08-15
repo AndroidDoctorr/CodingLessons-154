@@ -16,6 +16,7 @@ public class Calculator
     }
 
     // Add (doubles)    (bonus: more than two!!)
+    // a and b are parameters
     public double Add(double a, double b)
     {
         return a + b;
@@ -24,6 +25,8 @@ public class Calculator
     {
         return doubles.Sum();
     }
+    // 3 and 6 are arguments
+    // Add(3, 6);
 
     // Divide (ints)
 

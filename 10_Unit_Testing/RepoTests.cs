@@ -67,5 +67,62 @@ namespace _10_Unit_Testing
             if (content != null)
                 Assert.AreEqual(content.Title, title);
         }
+
+        [TestMethod]
+        public void MovieRatedR_ShouldNotBeFamilyFriendly()
+        {
+            // CHALLENGE: Complete and run these two tests
+
+            // ARRANGE your data
+            //   (a movie)
+            Movie movie = new Movie("sfd", "dsfdhgfjh", 1, Maturity.R, Genre.Horror, 120);
+            StreamingContent content = new StreamingContent();
+            content.MaturityRating = Maturity.R;
+            // Perform an ACTion
+            //   Make it rated R
+            movie.MaturityRating = Maturity.R;
+            //   (Sometimes the action is just setting up the data)
+            // ASSERT the result you expect
+            //   IsFamilyFriendly is false
+            Assert.IsFalse(movie.IsFamilyFriendly);
+        }
+
+        /*
+        // Data Test Method
+        [DataTestMethod]
+        [DataRow(Maturity.G, true)]
+        [DataRow(Maturity.PG, true)]
+        [DataRow(Maturity.PG_13, false)]
+        [DataRow(Maturity.R, false)]
+        [DataRow(Maturity.TV_G, true)]
+        [DataRow(Maturity.TV_MA, false)]
+        public void SetMaturity_ShouldGetCorrectIsFamilyFriendly(Maturity maturity, bool isFamilyFriendly)
+        {
+            StreamingContent content = new StreamingContent();
+            content.MaturityRating = maturity;
+
+            bool actual = content.IsFamilyFriendly;
+
+            Assert.AreEqual(isFamilyFriendly, actual);
+        }
+        */
+
+
+
+        [TestMethod]
+        public void ShowWithTwoEpisodes_ShouldGetEpisodeCountOfTwo()
+        {
+            // Arrange
+            Show show = new Show();
+            Episode episodeOne = new Episode();
+            Episode episodeTwo = new Episode();
+            show.Episodes.Add(episodeOne);
+            show.Episodes.Add(episodeTwo);
+            // Act
+            int expected = 2;
+            int actual = show.EpisodeCount;
+            // Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
