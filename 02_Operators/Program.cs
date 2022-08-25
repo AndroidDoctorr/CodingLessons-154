@@ -9,6 +9,7 @@ System.Console.WriteLine(a * b);
 System.Console.WriteLine((double)a / (double)b);  // casting - turn one type into another compatible type
 System.Console.WriteLine(a % b);
 
+// 1 byte = 8 bits (ones and zeros)
 char c = 'a';
 byte byteC = (byte)c;
 int intC = (int)c;

@@ -35,3 +35,12 @@ Console.WriteLine(myDog.Diet);
 // Polymorphism - having different versions of things
 Eagle eagle = new Eagle();
 eagle.Move();
+
+
+Animal animal = new Mammal();
+animal.NestedLoop();
+
+
+int[] nums = { 1, 2, 3, 4, 5 };
+
+Console.WriteLine(nums[5]);

@@ -1,6 +1,24 @@
 public class Person
 {
     public string FirstName { get; set; }
+    public string ItemInHand { get; set; }
+
+
+    public bool GiveItem(string item)
+    {
+        if (ItemInHand == null)
+        {
+            ItemInHand = item;
+            return true;
+        } else
+        {
+            return false;
+        }
+    }
+
+    // usage example: person1.GiveItem("pencil");
+
+
 
     // backing field
     private string _lastName;
@@ -16,7 +34,6 @@ public class Person
     }
 
     public DateTime DateOfBirth { get; set; }
-
     public int Age
     {
         get

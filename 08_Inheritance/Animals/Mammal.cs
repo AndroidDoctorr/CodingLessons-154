@@ -1,5 +1,6 @@
 public class Mammal : Animal
 {
+    public string FurColor { get; set; }
     public Mammal() : base()
     {
         Console.WriteLine("This is the Mammal constructor");
@@ -9,6 +10,7 @@ public class Mammal : Animal
 
     public override void Move()
     {
+        Breathe();
         Console.WriteLine($"This {GetType().Name} runs");
     }
 }

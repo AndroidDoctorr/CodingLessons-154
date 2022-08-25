@@ -11,9 +11,15 @@ System.Console.WriteLine(firstVehicle.Type);
 // interpolation
 System.Console.WriteLine($"This is a {firstVehicle.Make} {firstVehicle.Model}");
 
+// Create an instance of Person
+// Instantiation
 Person me = new Person();
 me.LastName = "Torr";
 me.FirstName = "Andrew";
+
+// Same class, different instance - so different name, birthdate etc
+Person you = new Person();
+
 
 System.Console.WriteLine(me.FullName);
 

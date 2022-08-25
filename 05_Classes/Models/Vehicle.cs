@@ -67,8 +67,10 @@ public class Indicator
         IsFlashing = true;
     }
 
+    // 1    2     3     3a
     public void TurnOff()
     {
+        // 4
         IsFlashing = false;
     }
 }
